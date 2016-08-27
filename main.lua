@@ -79,10 +79,10 @@ function newMissile(posX, posY, targetX, targetY, speed)
 end
 
 function newEnemyMissile()
-	local posX = math.random(0.0, love.window.getWidth())
+	local posX = math.random(0.0, love.graphics.getWidth())
 	local posY = 0.0
-	local targetX = math.random(0, love.window.getWidth())
-	local targetY = love.window.getHeight()
+	local targetX = math.random(0, love.graphics.getWidth())
+	local targetY = love.graphics.getHeight()
 	local speed = 0.7
 	newMissile(posX, posY, targetX, targetY, speed)
 end
@@ -129,13 +129,13 @@ function love.update(dt)
 end
 
 function love.mousepressed(x, y, button)
-	newMissile(love.window.getWidth()/2, love.window.getHeight(), x, y, 3.0)
+	newMissile(love.graphics.getWidth()/2, love.graphics.getHeight(), x, y, 3.0)
 	
 	--[[
-	newMissile(love.window.getWidth()/2, love.window.getHeight(), x+missileSpread, y, 3.0)
-	newMissile(love.window.getWidth()/2, love.window.getHeight(), x-missileSpread, y, 3.0)
-	newMissile(love.window.getWidth()/2, love.window.getHeight(), x+2*missileSpread, y, 3.0)
-	newMissile(love.window.getWidth()/2, love.window.getHeight(), x-2*missileSpread, y, 3.0)
+	newMissile(love.graphics.getWidth()/2, love.graphics.getHeight(), x+missileSpread, y, 3.0)
+	newMissile(love.graphics.getWidth()/2, love.graphics.getHeight(), x-missileSpread, y, 3.0)
+	newMissile(love.graphics.getWidth()/2, love.graphics.getHeight(), x+2*missileSpread, y, 3.0)
+	newMissile(love.graphics.getWidth()/2, love.graphics.getHeight(), x-2*missileSpread, y, 3.0)
 	]]
 end
 
